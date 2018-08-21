@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import AddNinja from "./AddNinja"
 import { Ninjas } from "./Ninjas"
 
 export default class App extends Component {
@@ -8,6 +9,13 @@ export default class App extends Component {
 			{ id: 2, name: "Ken", age: 20, belt: "Green" },
 			{ id: 3, name: "Hayabusa", age: 35, belt: "Black" },
 		],
+	}
+
+	addNinja = ninja => {
+		ninja.id = this.state.ninjas.length + 1
+		this.setState({
+			ninjas: [...this.state.ninjas, ninja],
+		})
 	}
 
 	render() {
@@ -20,7 +28,10 @@ export default class App extends Component {
 						🙂
 					</span>
 				</p>
+				<br />
 				<Ninjas ninjas={this.state.ninjas} />
+				<br />
+				<AddNinja addNinja={this.addNinja} />
 			</div>
 		)
 	}
