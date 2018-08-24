@@ -1,20 +1,27 @@
 import React, { Component } from "react"
-import AddNinja from "./AddNinja"
+import { AddNinja } from "./AddNinja"
 import { Ninjas } from "./Ninjas"
 
-export default class App extends Component {
+export class App extends Component {
 	state = {
 		ninjas: [
 			{ id: 1, name: "Ryu", age: 25, belt: "Black" },
 			{ id: 2, name: "Ken", age: 20, belt: "Green" },
 			{ id: 3, name: "Hayabusa", age: 35, belt: "Black" },
+			{ id: 4, name: "Ayumi", age: 25, belt: "Purple" },
 		],
 	}
 
 	addNinja = ninja => {
-		ninja.id = this.state.ninjas.length + 1
+		ninja.id = Math.random()
 		this.setState({
 			ninjas: [...this.state.ninjas, ninja],
+		})
+	}
+
+	deleteNinja = id => {
+		this.setState({
+			ninjas: this.state.ninjas.filter(ninja => ninja.id !== id),
 		})
 	}
 
@@ -29,7 +36,10 @@ export default class App extends Component {
 					</span>
 				</p>
 				<br />
-				<Ninjas ninjas={this.state.ninjas} />
+				<Ninjas
+					ninjas={this.state.ninjas}
+					deleteNinja={this.deleteNinja}
+				/>
 				<br />
 				<AddNinja addNinja={this.addNinja} />
 			</div>

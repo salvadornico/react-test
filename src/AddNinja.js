@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-export default class AddNinja extends Component {
+export class AddNinja extends Component {
 	state = {
 		name: null,
 		age: null,
