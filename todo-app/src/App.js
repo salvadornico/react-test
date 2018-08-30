@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import { Todos } from "./Todos.component"
-import { AddTodo } from "./AddTodo.component"
+import { Todos } from "./Todos"
+import { AddTodo } from "./AddTodo"
 
 export class App extends Component {
 	state = {

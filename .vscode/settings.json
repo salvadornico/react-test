@@ -1,7 +1,7 @@
 {
 	"tslint.enable": false,
 	"files.associations": {
-		"*.component.js": "javascriptreact"
+		"*.js": "javascriptreact"
 	},
 	"javascript.updateImportsOnFileMove.enabled": "always",
 	"material-icon-theme.activeIconPack": "react_redux"
